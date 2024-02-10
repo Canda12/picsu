@@ -22,6 +22,12 @@ Route::get('/', function () {
     ]);
 })->name('dashboard');
 
+Route::get('/dashboard', function () {
+    return view('dashboard', [
+        'fotos' => Foto::orderBy('id', 'DESC')->get(), 
+    ]);
+})->name('dashboard');
+
 Route::middleware(['auth'])->group(function () {
     Route::controller(AlbumController::class)->group(function () {
         Route::get('/album', 'index')->name('album.index'); 
