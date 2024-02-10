@@ -16,4 +16,9 @@ class Foto extends Model
         'tgl_unggah', 
         'image', 
     ]; 
+
+    public function album()
+    {
+        return $this->belongsTo(Album::class); 
+    }
 }   

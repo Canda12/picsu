@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <td class="py-2 px-4 border">Album</td>
-                            <td class="py-2 px-4 border">-</td>
+                            <td class="py-2 px-4 border">{{ $foto->album->nama_album }}</td>
                         </tr>
                         <tr>
                             <td class="py-2 px-4 border">Tanggal Unggah</td>
