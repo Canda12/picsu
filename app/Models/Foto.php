@@ -9,6 +9,8 @@ class Foto extends Model
 {
     use HasFactory;
 
+    protected $table = 'fotos';
+    
     public $fillable = [
         'judul_foto', 
         'album_id', 
@@ -20,5 +22,20 @@ class Foto extends Model
     public function album()
     {
         return $this->belongsTo(Album::class); 
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 }   

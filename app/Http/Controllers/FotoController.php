@@ -6,6 +6,7 @@ use App\Models\Foto;
 use App\Models\Album;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest; 
 use App\Http\Requests\FotoRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,6 +22,20 @@ class FotoController extends Controller
     public function show(Foto $foto)
     {
         return view('modules.foto.show', compact('foto')); 
+    }
+
+    public function like(Foto $foto)
+    {
+        $foto->likes()->create();
+
+        return redirect()->route('dashboard');
+    }
+
+    public function comment(CommentRequest $request, Foto $foto) 
+    {
+        $foto->comments()->create($request->validated()); 
+
+        return redirect()->route('dashboard');
     }
 
     public function create()

@@ -31,6 +31,9 @@
                 </div>
                 <div class="mb-3">
                     <x-label for="image" :value="__('Foto')" />
+                    @if(isset($foto))
+                    <img src="{{ Storage::url($foto->image) }}" alt="Image 1">
+                @endif
                     <input type="file" class="block mt-1 w-full" type="file" name="image" {{ isset($foto) ? '' : 'required' }} autofocus />
                 </div>
                 <div class="mb-3">
