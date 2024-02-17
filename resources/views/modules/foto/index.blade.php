@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Foto') }}
+                {{ __('Kelola Foto Pribadi Saya') }}
             </h2>
             <div>
                 <a href="{{ route('foto.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
