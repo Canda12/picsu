@@ -2,11 +2,8 @@
 
 use App\Models\Foto;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AlbumController;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\FotoController;
-use App\Http\Controllers\LikeController;
-
+use App\Http\Controllers\AlbumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,12 +28,6 @@ Route::get('/dashboard', function () {
     ]);
 })->name('dashboard');
 
-Route::post('/foto/{foto}/like', [FotoController::class, 'like'])->name('foto.like');
-
-Route::get('/foto/{foto}/show', [FotoController::class, 'show'])->name('foto.show');
-Route::get('/foto/{foto}/like', [FotoController::class, 'like'])->name('foto.like');
-Route::post('/foto/{foto}/comment', [FotoController::class, 'comment'])->name('foto.comment');  
-
 Route::middleware(['auth'])->group(function () {
     Route::controller(AlbumController::class)->group(function () {
         Route::get('/album', 'index')->name('album.index'); 
@@ -50,17 +41,12 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(FotoController::class)->group(function () {
         Route::get('/foto', 'index')->name('foto.index'); 
         Route::get('/foto/create', 'create')->name('foto.create');
+        Route::get('/foto/{foto}/show', 'show')->name('foto.show');
         Route::get('/foto/{foto}/edit', 'edit')->name('foto.edit'); 
         Route::get('/foto/{foto}/delete', 'delete')->name('foto.delete'); 
         Route::post('/foto', 'store')->name('foto.store'); 
         Route::put('/foto/{foto}', 'update')->name('foto.update'); 
     }); 
-
-    Route::controller(Controller::class)->group(function (){
-        Route::post('/foto/{foto}/like', [LikeController::class, 'create'])->name('foto.like');
-        Route::get('/comments/{comment}/show', [CommentController::class, 'index'])->name('comments.show');
-        Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
-    });
 }); 
 
 require __DIR__.'/auth.php';

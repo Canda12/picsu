@@ -21,9 +21,6 @@
                             <a href="{{ route('foto.show', ['foto' => $foto]) }}">
                                 <div class="bg-gray-200 p-4 rounded-lg">
                                     <img src="{{ Storage::url($foto->image) }}" alt="Image 1" class="w-full h-40 object-cover rounded">
-                                    <small>{{ $foto->judul_foto}}</small>
-                                    <p>{{ $foto->deskripsi_foto }}</p>
-                                    <small>{{ $foto->tgl_unggah }}</small>
                                 </div>
                             </a>
                         @endforeach 
