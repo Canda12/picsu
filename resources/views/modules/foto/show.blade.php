@@ -68,6 +68,7 @@
                     <div class="mt-6">
                         <div class="flex">
                             <a href="{{ route('foto.edit', ['foto' => $foto]) }}" class="text-center block bg-green-500 text-white p-2 px-4 text-sm font-bold rounded-lg">Edit Foto</a>
+                            <a href="{{ route('foto.delete', ['foto' => $foto]) }}" class="text-center block bg-red-500 text-white p-2 px-4 text-sm font-bold rounded-lg ml-2">Hapus</a>
                         </div>
                     </div>
                 @endif
