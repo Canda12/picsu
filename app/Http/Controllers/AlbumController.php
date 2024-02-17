@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use Illuminate\Http\Request;
 use App\Http\Requests\AlbumRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AlbumController extends Controller
 {
     public function index()
     {
-        $albums = Album::orderBy('id', 'DESC')->get(); 
+        $albums = Album::latest()->self()->get(); 
 
         return view('modules.album.index', compact('albums')); 
     }
@@ -24,7 +25,11 @@ class AlbumController extends Controller
 
     public function store(AlbumRequest $request)
     {
-        Album::create($request->validated()); 
+        $validated = $request->validated(); 
+
+        $validated['user_id'] = Auth::user()->id; 
+
+        Album::create($validated); 
 
         return redirect()->route('album.index'); 
     }
@@ -38,7 +43,11 @@ class AlbumController extends Controller
 
     public function update(Album $album, AlbumRequest $request)
     {
-        $album->update($request->validated()); 
+        $validated = $request->validated(); 
+
+        $validated['user_id'] = Auth::user()->id; 
+
+        $album->update($validated); 
 
         return redirect()->route('album.index'); 
     }

@@ -14,13 +14,13 @@
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('album.index')" :active="request()->routeIs('album.index')">
-                            {{ __('Album') }}
+                            {{ __('Lihat Semua Foto') }}
                         </x-nav-link>
                         <x-nav-link :href="route('foto.index')" :active="request()->routeIs('foto.index')">
-                            {{ __('Foto') }}
+                            {{ __('Foto Saya') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('album.index')" :active="request()->routeIs('album.index')">
+                            {{ __('Semua Album') }}
                         </x-nav-link>
                     </div>
                 @else

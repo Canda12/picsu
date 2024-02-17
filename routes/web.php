@@ -1,9 +1,13 @@
 <?php
 
 use App\Models\Foto;
+use App\Models\Album;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FotoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +20,23 @@ use App\Http\Controllers\AlbumController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard', [
-        'fotos' => Foto::orderBy('id', 'DESC')->get(), 
-    ]);
-})->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/dashboard', function () {
+Route::controller(FotoController::class)->group(function () {
+    Route::get('/foto/{foto}/show', 'show')->name('foto.show');
+});
+
+Route::get('/dashboard', function (Request $request) {
+    $fotos = Foto::query()
+        ->where(function ($query) use ($request) {
+            if ($request->album_id) $query->where('album_id', $request->album_id); 
+        })
+        ->latest()
+        ->get(); 
+
     return view('dashboard', [
-        'fotos' => Foto::orderBy('id', 'DESC')->get(), 
+        'fotos' => $fotos, 
+        'albums' => Album::latest()->get(), 
     ]);
 })->name('dashboard');
 
@@ -41,11 +53,16 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(FotoController::class)->group(function () {
         Route::get('/foto', 'index')->name('foto.index'); 
         Route::get('/foto/create', 'create')->name('foto.create');
-        Route::get('/foto/{foto}/show', 'show')->name('foto.show');
         Route::get('/foto/{foto}/edit', 'edit')->name('foto.edit'); 
         Route::get('/foto/{foto}/delete', 'delete')->name('foto.delete'); 
         Route::post('/foto', 'store')->name('foto.store'); 
         Route::put('/foto/{foto}', 'update')->name('foto.update'); 
+        Route::get('/foto/{foto}/like', 'like')->name('foto.like'); 
+    }); 
+
+    Route::controller(CommentController::class)->group(function () {
+        Route::post('/comment/{foto}', 'store')->name('comment.store');
+        Route::get('/comment/{comment}/delete', 'delete')->name('comment.delete'); 
     }); 
 }); 
 
