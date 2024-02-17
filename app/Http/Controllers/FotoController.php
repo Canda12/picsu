@@ -65,7 +65,7 @@ class FotoController extends Controller
 
         $validated = $request->validated(); 
         $validated['image'] = $fileName; 
-        $validated['user_id'] = Auth::user()->id; 
+        '$validated['user_id'] = Auth::user()->id; '
 
         Foto::create($validated); 
 
@@ -93,6 +93,6 @@ class FotoController extends Controller
     {
         $foto->delete(); 
 
-        return redirect()->route('foto.index'); 
+        return redirect()->back(); 
     }
 }
