@@ -19,15 +19,15 @@ https://vegas.jaysalvat.com/
 Caption Hover Effects
 http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 -->
-	<link rel="stylesheet" href="{{ asset('') }}/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{ asset('') }}/css/animate.min.css">
-	<link rel="stylesheet" href="{{ asset('') }}/css/font-awesome.min.css">
-  	<link rel="stylesheet" href="{{ asset('') }}/css/component.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/animate.min.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/font-awesome.min.css">
+  	<link rel="stylesheet" href="{{ asset('') }}css/component.css">
 	
-    <link rel="stylesheet" href="{{ asset('') }}/css/owl.theme.css">
-	<link rel="stylesheet" href="{{ asset('') }}/css/owl.carousel.css">
-	<link rel="stylesheet" href="{{ asset('') }}/css/vegas.min.css">
-	<link rel="stylesheet" href="{{ asset('') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('') }}css/owl.theme.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/owl.carousel.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/vegas.min.css">
+	<link rel="stylesheet" href="{{ asset('') }}css/style.css">
 
 	<!-- Google web font  -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
@@ -54,7 +54,7 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
           <span class="icon icon-bar"></span>
           <span class="icon icon-bar"></span>
         </button>
-        <a href="#top" class="navbar-brand smoothScroll">U-Pics</a>
+        <a href="#top" class="navbar-brand smoothScroll">Pics-U</a>
       </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -76,9 +76,10 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
     <div class="row">
 
       <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
-        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Let's take a snapshot</h1>
-        <p class="wow fadeInUp" data-wow-delay="0.9s">Snapshot website template is available for free download. Anyone can modify and use it for any site. Please tell your friends about <a rel="nofollow" href="http://www.templatemo.com">templatemo</a>. Thank you.</p>
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Welcome To Pics-U</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Abadikan Setiap Kenangan Bersama Pics-U<a rel="nofollow" href="http://www.templatemo.com"></a></p>
         <a href="{{ route('foto.index') }}" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">LOGIN</a>
+        <a href="{{ route('register') }}" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">REGISTER</a>
       </div>
 
     </div>
@@ -94,13 +95,13 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 
       <div class="col-md-9 col-sm-8 wow fadeInUp" data-wow-delay="0.2s">
         <div class="about-thumb">
-          <h1>Background</h1>
-          <p>Quisque tempor bibendum dolor at volutpat. Suspendisse venenatis quam sed libero euismod feugiat. In cursus nisi vitae lectus facilisis mollis. Nullam scelerisque, quam nec iaculis vulputate.</p>
+          <h1>Pics-U?</h1>
+          <p>Aplikasi gallery foto yang berbasis website ini dirancang untuk memudahkan pengguna mengunggah karyanya, dan berinteraksi dengan sesama pengguna dengan cara berkomentar dan menyukai hasil karya pengguna lain.</p>
         </div>
       </div>
 
       <div class="col-md-3 col-sm-4 wow fadeInUp about-img" data-wow-delay="0.6s">
-        <img src="{{ asset('') }}/images/about-img.jpg" class="img-responsive img-circle" alt="About">
+        <img src="{{ asset('') }}images/PICSU.jpg" class="img-responsive img-circle" alt="About">
       </div>
 
     </div>
@@ -117,7 +118,7 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
       <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
         <div class="section-title">
           <h1>Gallery</h1>
-          <p>Nullam scelerisque, quam nec iaculis vulputate, arcu ligula sollicitudin nisl, ac volutpat erat nulla a arcu.</p>
+          <p>“Unggah segala karya indah mu bersama Pics-U”</p>
         </div>
       </div>
 
@@ -144,15 +145,15 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- Javascript  -->
-<script src="{{ asset('') }}/js/jquery.js"></script>
-<script src="{{ asset('') }}/js/bootstrap.min.js"></script>
-<script src="{{ asset('') }}/js/vegas.min.js"></script>
-<script src="{{ asset('') }}/js/modernizr.custom.js"></script>
-<script src="{{ asset('') }}/js/toucheffects.js"></script>
-<script src="{{ asset('') }}/js/owl.carousel.min.js"></script>
-<script src="{{ asset('') }}/js/smoothscroll.js"></script>
-<script src="{{ asset('') }}/js/wow.min.js"></script>
-<script src="{{ asset('') }}/js/custom.js"></script>
+<script src="{{ asset('') }}js/jquery.js"></script>
+<script src="{{ asset('') }}js/bootstrap.min.js"></script>
+<script src="{{ asset('') }}js/vegas.min.js"></script>
+<script src="{{ asset('') }}js/modernizr.custom.js"></script>
+<script src="{{ asset('') }}js/toucheffects.js"></script>
+<script src="{{ asset('') }}js/owl.carousel.min.js"></script>
+<script src="{{ asset('') }}js/smoothscroll.js"></script>
+<script src="{{ asset('') }}js/wow.min.js"></script>
+<script src="{{ asset('') }}js/custom.js"></script>
 
 </body>
 </html>

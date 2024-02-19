@@ -66,7 +66,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-            @endif
+            @endif 
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">

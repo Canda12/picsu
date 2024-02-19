@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Selamat Datang di Aplikasi Galeri Foto') }}
+            {{ __('Welcome To Pics-U') }}
         </h2>
     </x-slot>
 
@@ -25,9 +25,9 @@
                                 <div class="bg-white border p-4 rounded-lg">
                                     <img src="{{ Storage::url($foto->image) }}" alt="Image 1" class="w-full h-40 object-cover rounded">
                                     <div class="mx-1 mt-2 font-bold text-lg text-green-700">{{ $foto->judul_foto }}</div>
-                                    <div class="mx-1 text-gray-400 text-sm">Ditambahkan oleh <span class="font-bold">{{ $foto->user->name }}</span> <br/> pada {{ $foto->created_at }}</div>
-                                    <span class="bg-gray-600 p-1 text-white rounded text-sm inline-block my-2">{{ $foto->album->name }}</span>
+                                    <span class="bg-gray-600 p-1 text-white rounded text-sm inline-block my-2">{{ $foto->album->nama_album }}</span>
                                     <div class="mx-1 mt-2 text-gray-600">{{ $foto->deskripsi_foto }}</div>
+                                    <div class="mx-1 text-gray-400 text-sm">Ditambahkan oleh <span class="font-bold">{{ $foto->user->name }}</span> <br/> pada {{ $foto->created_at }}</div>                                
                                 </div>
                             </a>
                         @endforeach 

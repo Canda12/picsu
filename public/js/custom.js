@@ -33,9 +33,9 @@ $(document).ready(function() {
   $(function() {
     $('body').vegas({
         slides: [
-            { src: 'images/slide-img1.jpg' },
-            { src: 'images/slide-img2.jpg' },
-            { src: 'images/slide-img3.jpg' }
+            { src: 'images/lijen.jpg' },
+            { src: 'images/itu.jpg' },
+            { src: 'images/karina.jpg' }
         ],
         timer: false,
         transition: [ 'zoomIn', ],
